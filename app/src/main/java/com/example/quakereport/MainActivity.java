@@ -7,6 +7,8 @@ import android.content.AsyncTaskLoader;
 
 import android.content.Context;
 import android.content.Loader;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.view.View;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 import java.nio.charset.Charset;
 
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<Earthquake>>{
 
@@ -31,7 +34,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getLoaderManager().initLoader(1, null, this).forceLoad();
+        if(isNetworkAvailable())
+            getLoaderManager().initLoader(1, null, this).forceLoad();
+        else
+        {
+            TextView T = findViewById(R.id.emptyElement);
+            T.setText("No Internet Connection");
+            updateUI(new ArrayList<Earthquake>());
+        }
     }
     @Override
     public Loader<ArrayList<Earthquake>> onCreateLoader(int id, Bundle args)
@@ -57,7 +67,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         listView.setAdapter(adapter);
         listView.setEmptyView(findViewById(R.id.emptyElement));
     }
-
+    private boolean isNetworkAvailable()
+    {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 //    private class EarthquakeAsyncTask extends AsyncTask<String, Void, ArrayList<Earthquake>>     //Async is made by dev. team to make work easy on the background thread.
 //    {
 //        @Override
