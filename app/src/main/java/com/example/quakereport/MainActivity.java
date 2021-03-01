@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         MyAdapter adapter = new MyAdapter(this, arrayList);
         ListView listView = findViewById(R.id.list_view);
         listView.setAdapter(adapter);
+        listView.setEmptyView(findViewById(R.id.emptyElement));
     }
 
 //    private class EarthquakeAsyncTask extends AsyncTask<String, Void, ArrayList<Earthquake>>     //Async is made by dev. team to make work easy on the background thread.

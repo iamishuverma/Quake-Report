@@ -26,6 +26,7 @@ public class EarthquakeLoader extends AsyncTaskLoader<ArrayList<Earthquake>>
     }
     @Override
     public ArrayList<Earthquake> loadInBackground() {
+
         ArrayList<Earthquake> arrayList = new ArrayList<>();
         try {
             URL url = new URL(query);                                                               //Creating an URL object holding our URL

@@ -1,0 +1,25 @@
+[33mcommit 76e5cee381a37863c4abede16a56f0bf032a81c7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: e1d2968 ed74fff
+Author: iamishuverma <vermaishu331@gmail.com>
+Date:   Mon Mar 1 09:22:40 2021 +0530
+
+    "AsyncTaskLoader"
+    Merge branch 'master' of https://github.com/iamishuverma/Quake-Report
+
+[33mcommit e1d2968b61dd9536bf8571f09d0bb91fe59338ce[m
+Author: iamishuverma <vermaishu331@gmail.com>
+Date:   Mon Mar 1 09:21:00 2021 +0530
+
+    AsyncTaskLoader
+
+[33mcommit ed74fff5ca6b0d1f4b99b11c2e9829f6f3cf0120[m
+Author: Ishu Verma <48796023+iamishuverma@users.noreply.github.com>
+Date:   Mon Mar 1 00:47:13 2021 +0530
+
+    Create README.md
+
+[33mcommit 1f5fac7f9539829984190fe2ffe8074512160e2e[m
+Author: iamishuverma <vermaishu331@gmail.com>
+Date:   Mon Mar 1 00:31:09 2021 +0530
+
+    AsyncTask
