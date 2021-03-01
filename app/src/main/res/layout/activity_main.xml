@@ -1,5 +1,6 @@
-<View
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 <RelativeLayout
@@ -21,4 +22,4 @@
     android:id="@+id/list_view"
     android:orientation="vertical"
     />
-</View>
+</LinearLayout>
